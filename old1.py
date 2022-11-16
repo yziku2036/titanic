@@ -17,7 +17,7 @@ def main():
     data=train_set.dropna(subset=['Age']).sort_values("Age")
 
     # 年齢
-    AgePlot = train_set['Survived'].groupby(train_set['Age']).mean()
+    #AgePlot = train_set['Survived'].groupby(train_set['Age']).mean()
     AgePlot.index=AgePlot.index.astype(int)
     ax1.bar(x=AgePlot.index, height=AgePlot.values)
     ax1.set_ylabel('Survival Rate')
@@ -26,9 +26,9 @@ def main():
     ax1.set_yticks(np.arange(0, 1.1,.1))
     ax1.set_title("Class and Survival Rate")
 
-    print(train_set['Survived'].groups)
+    print(train_set['Survived'])
 
-    #plt.show()
+    plt.show()
 
 
 if __name__=='__main__':

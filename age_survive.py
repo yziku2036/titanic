@@ -58,4 +58,4 @@ ax3.set_title('Age and Survival Rate')
 
 test.plot()
 
-#plt.show() 
+plt.show() 
