@@ -12,8 +12,6 @@ ax1 = fig.add_subplot(111)
 #ax3 = fig.add_subplot(133)
 
 
-print(train_set['Age'])
-
 train_set['Age'].fillna(train_set['Age'].median(), inplace=True)
 AgePlot = train_set['Survived'].groupby(train_set['Age']).mean()
 print(AgePlot)
