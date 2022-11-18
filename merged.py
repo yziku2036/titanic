@@ -23,6 +23,9 @@ def main():
     plt.show() 
 
 
+
+
+
 def survived_age(data,ax):
     prepared_set=data.fill_null(data['Age'].median())
     AgePlot = prepared_set.select(pl.col(["Survived","Age"])).groupby("Age").mean().sort("Age")
@@ -45,6 +48,9 @@ def pclass_age(data,ax):
     ax.bar(x=PClassPlot["Pclass"], height=PClassPlot["Age"])
     ax.set_ylabel('Age_mean')
     ax.set_xlabel('PClass')
+    print("hogehoge")
+    print(PClassPlot["Pclass"])
+    ax.set_xticks(PClassPlot["Pclass"])
     ax.set_title("Class and Gender Ratio")
     #return PClassPlot
 
@@ -59,7 +65,7 @@ def pclass_survived(data,ax):
     ax.bar(x=PClassPlot["Pclass"], height=PClassPlot["Survived"])
     ax.set_ylabel('Survival Rate')
     ax.set_xlabel('PClass')
-    #ax.set_xticks(PClassPlot.index)
+    ax.set_xticks(PClassPlot["Pclass"])
     ax.set_yticks(np.arange(0, 1.1,.1))
     ax.set_title("Class and Survival Rate")
 

@@ -21,7 +21,7 @@ prepared_set=sex_converted_df.with_column(train_set["Pclass"])
 
 PClassPlot=prepared_set.select(pl.col(["Pclass","Sex"])).groupby("Pclass")
 PClassPlot=PClassPlot.mean()
-print(PClassPlot)
+print(PClassPlot["Pclass"])
 
 ax1.bar(x=PClassPlot["Pclass"], height=PClassPlot["Sex"])
 ax1.set_ylabel('Proportion of Male')
